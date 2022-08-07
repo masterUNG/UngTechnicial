@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ungtechnic/states/create_account.dart';
 import 'package:ungtechnic/utility/my_constant.dart';
 import 'package:ungtechnic/widgets/show_buttom.dart';
 import 'package:ungtechnic/widgets/show_form.dart';
@@ -12,7 +13,8 @@ class Authen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(decoration: MyConstant().gradientBox(),
+      body: Container(
+        decoration: MyConstant().gradientBox(),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -39,7 +41,14 @@ class Authen extends StatelessWidget {
                   const ShowText(text: 'Non Account ? '),
                   ShowTextButton(
                     label: 'Create Account',
-                    pressFunc: () {},
+                    pressFunc: () {
+                      print('You Click Create Account');
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return const CreateAccount();
+                        },
+                      ));
+                    },
                   ),
                 ],
               )
